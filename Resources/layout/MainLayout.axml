@@ -28,10 +28,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/ll_tablero"
-        android:background="@android:color/holo_red_light"
         android:weightSum="100"
         android:layout_weight="80"
-        android:gravity="center">
+        android:gravity="center"
+        android:background="@android:color/background_dark">
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
