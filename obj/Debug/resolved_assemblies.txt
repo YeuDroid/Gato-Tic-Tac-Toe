@@ -3,6 +3,9 @@ C:\Users\a1100\Documents\Visual Studio 2017\Projects\GUIGato\Gato Tic Tac Toe\ob
 C:\Users\a1100\Documents\Visual Studio 2017\Projects\GUIGato\Gato Tic Tac Toe\obj\Debug\android\assets\Jurassic.dll
 C:\Users\a1100\Documents\Visual Studio 2017\Projects\GUIGato\Gato Tic Tac Toe\obj\Debug\android\assets\Mono.Android.dll
 C:\Users\a1100\Documents\Visual Studio 2017\Projects\GUIGato\Gato Tic Tac Toe\obj\Debug\android\assets\mscorlib.dll
+C:\Users\a1100\Documents\Visual Studio 2017\Projects\GUIGato\Gato Tic Tac Toe\obj\Debug\android\assets\Square.OkHttp.dll
+C:\Users\a1100\Documents\Visual Studio 2017\Projects\GUIGato\Gato Tic Tac Toe\obj\Debug\android\assets\Square.OkIO.dll
+C:\Users\a1100\Documents\Visual Studio 2017\Projects\GUIGato\Gato Tic Tac Toe\obj\Debug\android\assets\Square.Picasso.dll
 C:\Users\a1100\Documents\Visual Studio 2017\Projects\GUIGato\Gato Tic Tac Toe\obj\Debug\android\assets\System.Core.dll
 C:\Users\a1100\Documents\Visual Studio 2017\Projects\GUIGato\Gato Tic Tac Toe\obj\Debug\android\assets\System.dll
 C:\Users\a1100\Documents\Visual Studio 2017\Projects\GUIGato\Gato Tic Tac Toe\obj\Debug\android\assets\System.Xml.dll

@@ -32,13 +32,19 @@ namespace Gato_Tic_Tac_Toe
 		{
 			
 			// aapt resource value: 0x7F010002
-			public const int nulo = 2130771970;
+			public const int gato = 2130771970;
 			
 			// aapt resource value: 0x7F010003
-			public const int o = 2130771971;
+			public const int gato2 = 2130771971;
 			
 			// aapt resource value: 0x7F010004
-			public const int x = 2130771972;
+			public const int nulo = 2130771972;
+			
+			// aapt resource value: 0x7F010005
+			public const int o = 2130771973;
+			
+			// aapt resource value: 0x7F010006
+			public const int x = 2130771974;
 			
 			static Drawable()
 			{
@@ -53,65 +59,68 @@ namespace Gato_Tic_Tac_Toe
 		public partial class Id
 		{
 			
+			// aapt resource value: 0x7F020022
+			public const int btn_iniciaH = 2130837538;
+			
 			// aapt resource value: 0x7F020021
-			public const int btn_iniciaH = 2130837537;
+			public const int btn_iniciaM = 2130837537;
+			
+			// aapt resource value: 0x7F020003
+			public const int btn_reset = 2130837507;
 			
 			// aapt resource value: 0x7F020020
-			public const int btn_iniciaM = 2130837536;
-			
-			// aapt resource value: 0x7F020019
-			public const int btn_salir = 2130837529;
-			
-			// aapt resource value: 0x7F020005
-			public const int imageView1 = 2130837509;
+			public const int btn_salir = 2130837536;
 			
 			// aapt resource value: 0x7F020006
-			public const int imageView2 = 2130837510;
+			public const int imageView1 = 2130837510;
 			
 			// aapt resource value: 0x7F020007
-			public const int imageView3 = 2130837511;
-			
-			// aapt resource value: 0x7F020009
-			public const int imageView4 = 2130837513;
-			
-			// aapt resource value: 0x7F020010
-			public const int imageView5 = 2130837520;
-			
-			// aapt resource value: 0x7F020011
-			public const int imageView6 = 2130837521;
-			
-			// aapt resource value: 0x7F020013
-			public const int imageView7 = 2130837523;
-			
-			// aapt resource value: 0x7F020014
-			public const int imageView8 = 2130837524;
-			
-			// aapt resource value: 0x7F020015
-			public const int imageView9 = 2130837525;
-			
-			// aapt resource value: 0x7F020004
-			public const int linearLayout1 = 2130837508;
+			public const int imageView2 = 2130837511;
 			
 			// aapt resource value: 0x7F020008
-			public const int linearLayout2 = 2130837512;
+			public const int imageView3 = 2130837512;
+			
+			// aapt resource value: 0x7F020010
+			public const int imageView4 = 2130837520;
+			
+			// aapt resource value: 0x7F020011
+			public const int imageView5 = 2130837521;
 			
 			// aapt resource value: 0x7F020012
-			public const int linearLayout3 = 2130837522;
+			public const int imageView6 = 2130837522;
+			
+			// aapt resource value: 0x7F020014
+			public const int imageView7 = 2130837524;
+			
+			// aapt resource value: 0x7F020015
+			public const int imageView8 = 2130837525;
 			
 			// aapt resource value: 0x7F020016
-			public const int ll_footer = 2130837526;
+			public const int imageView9 = 2130837526;
+			
+			// aapt resource value: 0x7F020005
+			public const int linearLayout1 = 2130837509;
+			
+			// aapt resource value: 0x7F020009
+			public const int linearLayout2 = 2130837513;
+			
+			// aapt resource value: 0x7F020013
+			public const int linearLayout3 = 2130837523;
+			
+			// aapt resource value: 0x7F020017
+			public const int ll_footer = 2130837527;
 			
 			// aapt resource value: 0x7F020002
 			public const int ll_header = 2130837506;
 			
-			// aapt resource value: 0x7F020003
-			public const int ll_tablero = 2130837507;
+			// aapt resource value: 0x7F020004
+			public const int ll_tablero = 2130837508;
+			
+			// aapt resource value: 0x7F020019
+			public const int textView1 = 2130837529;
 			
 			// aapt resource value: 0x7F020018
-			public const int textView1 = 2130837528;
-			
-			// aapt resource value: 0x7F020017
-			public const int tv_devolped = 2130837527;
+			public const int tv_devolped = 2130837528;
 			
 			static Id()
 			{

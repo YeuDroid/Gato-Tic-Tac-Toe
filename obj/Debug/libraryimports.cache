@@ -1,22 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Paths>
-  <ManifestDocuments>
-    <ManifestDocument>obj\Debug\lp\3\jl\AndroidManifest.xml</ManifestDocument>
-    <ManifestDocument>obj\Debug\lp\4\jl\AndroidManifest.xml</ManifestDocument>
-    <ManifestDocument>obj\Debug\lp\5\jl\AndroidManifest.xml</ManifestDocument>
-    <ManifestDocument>obj\Debug\lp\6\jl\AndroidManifest.xml</ManifestDocument>
-    <ManifestDocument>obj\Debug\lp\7\jl\AndroidManifest.xml</ManifestDocument>
-    <ManifestDocument>obj\Debug\lp\8\jl\AndroidManifest.xml</ManifestDocument>
-  </ManifestDocuments>
+  <ManifestDocuments />
   <NativeLibraries />
   <Jars>
-    <Jar>obj\Debug\lp\2\jl\support-annotations.jar</Jar>
-    <Jar>obj\Debug\lp\3\jl\bin\classes.jar</Jar>
-    <Jar>obj\Debug\lp\4\jl\bin\classes.jar</Jar>
-    <Jar>obj\Debug\lp\5\jl\bin\classes.jar</Jar>
-    <Jar>obj\Debug\lp\6\jl\bin\classes.jar</Jar>
-    <Jar>obj\Debug\lp\7\jl\bin\classes.jar</Jar>
-    <Jar>obj\Debug\lp\8\jl\bin\classes.jar</Jar>
-    <Jar>obj\Debug\lp\9\jl\glide-full-4.1.1.jar</Jar>
+    <Jar>obj\Debug\lp\1\jl\okhttp-2.4.0.jar</Jar>
+    <Jar>obj\Debug\lp\2\jl\okio-1.5.0.jar</Jar>
+    <Jar>obj\Debug\lp\3\jl\picasso-2.5.2.jar</Jar>
   </Jars>
 </Paths>

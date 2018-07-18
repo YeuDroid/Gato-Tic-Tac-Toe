@@ -7,3 +7,9 @@ gato_tic_tac_toe.Frg_quienInica;md557bea50444c893fe6a544a9ff029fb38.Frg_quienIni
 Gato_Tic_Tac_Toe.MainActivity, Gato Tic Tac Toe;md557bea50444c893fe6a544a9ff029fb38.MainActivity
 Gato_Tic_Tac_Toe.MainActivity;md557bea50444c893fe6a544a9ff029fb38.MainActivity
 gato_tic_tac_toe.MainActivity;md557bea50444c893fe6a544a9ff029fb38.MainActivity
+Square.Picasso.RequestCreator+ActionCallback, Square.Picasso;com.squareup.picasso.RequestCreator_ActionCallback
+Square.Picasso.RequestCreator.ActionCallback;com.squareup.picasso.RequestCreator_ActionCallback
+com.squareup.picasso.RequestCreator_ActionCallback;com.squareup.picasso.RequestCreator_ActionCallback
+Square.Picasso.Picasso+IListenerImplementor, Square.Picasso;mono.com.squareup.picasso.Picasso_ListenerImplementor
+Square.Picasso.Picasso.IListenerImplementor;mono.com.squareup.picasso.Picasso_ListenerImplementor
+mono.com.squareup.picasso.Picasso_ListenerImplementor;mono.com.squareup.picasso.Picasso_ListenerImplementor

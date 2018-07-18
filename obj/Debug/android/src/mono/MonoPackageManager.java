@@ -108,6 +108,9 @@ class MonoPackageManager_Resources {
 		/* We need to ensure that "Gato Tic Tac Toe.dll" comes first in this list. */
 		"Gato Tic Tac Toe.dll",
 		"Jurassic.dll",
+		"Square.OkHttp.dll",
+		"Square.OkIO.dll",
+		"Square.Picasso.dll",
 	};
 	public static final String[] Dependencies = new String[]{
 	};
