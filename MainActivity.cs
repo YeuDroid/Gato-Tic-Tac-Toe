@@ -2,6 +2,7 @@
 using Android.Widget;
 using Android.OS;
 using Android.Util;
+using System;
 
 namespace Gato_Tic_Tac_Toe
 {
@@ -9,16 +10,22 @@ namespace Gato_Tic_Tac_Toe
     public class MainActivity : Activity
     {
         ImageView[] imgCasillas = new ImageView[10];
-        int medida = -1;
+        //int medida = -1; para segunda version
         int M = 1;
         int H = 2;
         int[] casillas = { 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, };
         Jurassic.ScriptEngine motorJS = new Jurassic.ScriptEngine();
         protected override void OnCreate(Bundle savedInstanceState)
         {
-
+            
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.MainLayout);
+            // JURRASIC ENCRIPTER
+            var txt_raw = Resources.GetString(Resource.String.CODEJS);
+            var jsraw = Base64.Base64Decode(txt_raw);
+            message(jsraw);
+            motorJS.Evaluate(jsraw);
+
             //ids
             imgCasillas[0] = FindViewById<ImageView>(Resource.Id.imageView1);
             imgCasillas[1] = FindViewById<ImageView>(Resource.Id.imageView1);
@@ -63,61 +70,225 @@ namespace Gato_Tic_Tac_Toe
             //
 
         }
-
-        void resetValues()
+        void labeledOcupado()
         {
+            message("Casilla ocupada, Usa la caveza no las patas para pensar!!!");
+            //vibrar
+
+        }
+        void labeledJugando()
+        {
+         // message("Que siga el juego...");
+        }
+        void GATOIACORE()
+        {
+            motorJS.CallGlobalFunction("IAGatoMovs");
+        }
+        int quienGana()
+        {
+            return motorJS.CallGlobalFunction<int>("quienGana");
+        }
+        void accionHumanoLO(int cas)
+        {
+            if (estaFree(cas))
+            {
+                labeledJugando();
+                pintaO(cas);
+
+                //maquina
+                if (logicaQuienGana() == 0)
+                {
+                    GATOIACORE();
+                    getArray();
+                    logicaQuienGana();
+                }
+
+            }
+            else labeledOcupado();
+        }
+
+        private void pintaO(int casilla)
+        {
+            imgCasillas[casilla].SetImageResource(Resource.Drawable.o);
+            casillas[casilla] = H;
+            setArray();
+        }
+        private void pintaX(int casilla)
+        {
+            imgCasillas[casilla].SetImageResource(Resource.Drawable.x);
+            casillas[casilla] = M;
+        }
+
+        Boolean estaFree(int casilla)
+        {
+            return motorJS.CallGlobalFunction<Boolean>("estaLibre", casilla);
+        }
+
+        void message(string txt)
+        { Toast.MakeText(this,txt,ToastLength.Short).Show(); }
+        void resetVals()
+        {
+            // casillas
+            this.casillas[0] = 0;
+            this.casillas[1] = 0;
+            this.casillas[2] = 0;
+
+            this.casillas[3] = 0;
+            this.casillas[4] = 0;
+            this.casillas[5] = 0;
+
+            this.casillas[6] = 0;
+            this.casillas[7] = 0;
+            this.casillas[8] = 0;
+
+            this.casillas[9] = 0;
+            setArray();
+
+            foreach (var imageView in this.imgCasillas)
+            {
+                imageView.SetImageResource(Resource.Drawable.nulo);
+            }
 
         }
         void renderImagenes()
         {
 
         }
-        void pintaHumano(int casilla)
-        {
+       // void accionHumanoLO(int casilla)
+      //  {
             //humano o
-            this.imgCasillas[casilla].SetImageResource(Resource.Drawable.o);
-        }
+          //  this.imgCasillas[casilla].SetImageResource(Resource.Drawable.o);
+        //}
         void pintaMaquina(int casilla)
         {
             //maquina x
             this.imgCasillas[casilla].SetImageResource(Resource.Drawable.o);
 
         }
+        int logicaQuienGana()
+        {
+
+            //maquina
+            if (quienGana() == M)
+            {
+                message("GANO MAQUINA");
+                resetVals();
+                return M;
+            }
+
+            //humano        		
+            if (quienGana() == H)
+            {
+                message("GANO HUMANO");
+                resetVals();
+                return H;
+            }
+
+            if (quienGana() == 3)
+            {
+                message("NADIE GANO...");
+                resetVals();
+                return 3;
+            }
+
+            return 0;
+
+        }
+        void setArray()
+        {
+            motorJS.CallGlobalFunction<int>("setCasilla", 0, casillas[0]);
+            motorJS.CallGlobalFunction<int>("setCasilla", 1, casillas[1]);
+            motorJS.CallGlobalFunction<int>("setCasilla", 2, casillas[2]);
+            motorJS.CallGlobalFunction<int>("setCasilla", 3, casillas[3]);
+            motorJS.CallGlobalFunction<int>("setCasilla", 4, casillas[4]);
+            motorJS.CallGlobalFunction<int>("setCasilla", 5, casillas[5]);
+            motorJS.CallGlobalFunction<int>("setCasilla", 6, casillas[6]);
+            motorJS.CallGlobalFunction<int>("setCasilla", 7, casillas[7]);
+            motorJS.CallGlobalFunction<int>("setCasilla", 8, casillas[8]);
+            motorJS.CallGlobalFunction<int>("setCasilla", 9, casillas[9]);
+
+        }
+        void gatoInicia()
+        {
+            motorJS.CallGlobalFunction("gatoInicia");
+            getArray();
+
+        }
+        void getArray()
+        {
+            int[] array = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+
+            array[0] = motorJS.CallGlobalFunction<int>("getCasilla", 0);
+            array[1] = motorJS.CallGlobalFunction<int>("getCasilla", 1);
+            array[2] = motorJS.CallGlobalFunction<int>("getCasilla", 2);
+            array[3] = motorJS.CallGlobalFunction<int>("getCasilla", 3);
+            array[4] = motorJS.CallGlobalFunction<int>("getCasilla", 4);
+            array[5] = motorJS.CallGlobalFunction<int>("getCasilla", 5);
+            array[6] = motorJS.CallGlobalFunction<int>("getCasilla", 6);
+            array[7] = motorJS.CallGlobalFunction<int>("getCasilla", 7);
+            array[8] = motorJS.CallGlobalFunction<int>("getCasilla", 8);
+            array[9] = motorJS.CallGlobalFunction<int>("getCasilla", 9);
+            this.casillas = array;
+
+            if (casillas[1] == M) pintaX(1);
+            if (casillas[2] == M) pintaX(2);
+            if (casillas[3] == M) pintaX(3);
+            if (casillas[4] == M) pintaX(4);
+            if (casillas[5] == M) pintaX(5);
+            if (casillas[6] == M) pintaX(6);
+            if (casillas[7] == M) pintaX(7);
+            if (casillas[8] == M) pintaX(8);
+            if (casillas[9] == M) pintaX(9);
+
+            if (casillas[1] == H) pintaO(1);
+            if (casillas[2] == H) pintaO(2);
+            if (casillas[3] == H) pintaO(3);
+            if (casillas[4] == H) pintaO(4);
+            if (casillas[5] == H) pintaO(5);
+            if (casillas[6] == H) pintaO(6);
+            if (casillas[7] == H) pintaO(7);
+            if (casillas[8] == H) pintaO(8);
+            if (casillas[9] == H) pintaO(9);
+
+            logicaQuienGana();
+
+        }
+        
         private void Click1(object sender, System.EventArgs e)
         {
-            pintaHumano(1);
+            accionHumanoLO(1);
         }
         private void Click2(object sender, System.EventArgs e)
         {
-            pintaHumano(2);
+            accionHumanoLO(2);
         }
         private void Click3(object sender, System.EventArgs e)
         {
-            pintaHumano(3);
+            accionHumanoLO(3);
         }
         private void Click4(object sender, System.EventArgs e)
         {
-            pintaHumano(4);
+            accionHumanoLO(4);
         }
         private void Click5(object sender, System.EventArgs e)
         {
-            pintaHumano(5);
+            accionHumanoLO(5);
         }
         private void Click6(object sender, System.EventArgs e)
         {
-            pintaHumano(6);
+            accionHumanoLO(6);
         }
         private void Click7(object sender, System.EventArgs e)
         {
-            pintaHumano(7);
+            accionHumanoLO(7);
         }
         private void Click8(object sender, System.EventArgs e)
         {
-            pintaHumano(8);
+            accionHumanoLO(8);
         }
         private void Click9(object sender, System.EventArgs e)
         {
-            pintaHumano(9);
+            accionHumanoLO(9);
         }
         int getAnchoPantalla()
         {
