@@ -24,10 +24,6 @@ namespace Gato_Tic_Tac_Toe
 			global::Android.Runtime.ResourceIdManager.UpdateIdValues();
 		}
 		
-		public static void UpdateIdValues()
-		{
-		}
-		
 		public partial class Drawable
 		{
 			
@@ -59,17 +55,17 @@ namespace Gato_Tic_Tac_Toe
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7F020022
-			public const int btn_iniciaH = 2130837538;
+			// aapt resource value: 0x7F020023
+			public const int btn_iniciaH = 2130837539;
 			
-			// aapt resource value: 0x7F020021
-			public const int btn_iniciaM = 2130837537;
+			// aapt resource value: 0x7F020022
+			public const int btn_iniciaM = 2130837538;
 			
 			// aapt resource value: 0x7F020003
 			public const int btn_reset = 2130837507;
 			
-			// aapt resource value: 0x7F020020
-			public const int btn_salir = 2130837536;
+			// aapt resource value: 0x7F020021
+			public const int btn_salir = 2130837537;
 			
 			// aapt resource value: 0x7F020006
 			public const int imageView1 = 2130837510;
@@ -121,6 +117,9 @@ namespace Gato_Tic_Tac_Toe
 			
 			// aapt resource value: 0x7F020018
 			public const int tv_devolped = 2130837528;
+			
+			// aapt resource value: 0x7F020020
+			public const int tv_id = 2130837536;
 			
 			static Id()
 			{

@@ -11,6 +11,12 @@
         android:layout_height="wrap_content"
         android:id="@+id/textView1"
         android:background="@android:color/holo_orange_dark" />
+    <TextView
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_id"
+        android:background="@android:color/holo_blue_bright" />
     <Button
         android:text="Salir"
         android:layout_width="match_parent"

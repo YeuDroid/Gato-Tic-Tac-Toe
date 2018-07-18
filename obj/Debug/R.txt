@@ -3,10 +3,10 @@ int drawable gato2 0x7f020001
 int drawable nulo 0x7f020002
 int drawable o 0x7f020003
 int drawable x 0x7f020004
-int id btn_iniciaH 0x7f060014
-int id btn_iniciaM 0x7f060013
+int id btn_iniciaH 0x7f060015
+int id btn_iniciaM 0x7f060014
 int id btn_reset 0x7f060001
-int id btn_salir 0x7f060012
+int id btn_salir 0x7f060013
 int id imageView1 0x7f060004
 int id imageView2 0x7f060005
 int id imageView3 0x7f060006
@@ -24,6 +24,7 @@ int id ll_header 0x7f060000
 int id ll_tablero 0x7f060002
 int id textView1 0x7f060011
 int id tv_devolped 0x7f060010
+int id tv_id 0x7f060012
 int layout mainlayout 0x7f040000
 int layout pierdegato 0x7f040001
 int layout quieninicia 0x7f040002

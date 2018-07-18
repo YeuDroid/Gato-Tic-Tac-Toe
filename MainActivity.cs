@@ -21,10 +21,11 @@ namespace Gato_Tic_Tac_Toe
         ImageView[] imgCasillas = new ImageView[10];
         TextView tv_devolped = null;
         Button btn_rst_juego = null;
+
         //int medida = -1; para segunda version
         int M = 1;
         int H = 2;
-        public int[] casillas = { 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, };
+        public static int[] casillas = { 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, };
         Jurassic.ScriptEngine motorJS = new Jurassic.ScriptEngine();
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -90,7 +91,6 @@ namespace Gato_Tic_Tac_Toe
 
 
         }
-
         private void Btn_rst_juego_Click(object sender, EventArgs e)
         {
 
@@ -112,7 +112,6 @@ namespace Gato_Tic_Tac_Toe
 
             
         }
-
         public void lanzarEscogerQuienInicia()
         {
             AlertDialog alerta = new AlertDialog.Builder(this).Create();
@@ -206,19 +205,19 @@ namespace Gato_Tic_Tac_Toe
             this.secretContador = 0;
             this.secretContador2 = 0;
             // casillas
-            this.casillas[0] = 8;
+            casillas[0] = 8;
 
-            this.casillas[1] = 0;
-            this.casillas[2] = 0;
-            this.casillas[3] = 0;
+            casillas[1] = 0;
+            casillas[2] = 0;
+            casillas[3] = 0;
 
-            this.casillas[4] = 0;
-            this.casillas[5] = 0;
-            this.casillas[6] = 0;
+            casillas[4] = 0;
+            casillas[5] = 0;
+            casillas[6] = 0;
 
-            this.casillas[7] = 0;
-            this.casillas[8] = 0;
-            this.casillas[9] = 0;
+            casillas[7] = 0;
+            casillas[8] = 0;
+            casillas[9] = 0;
 
             setArray();
 
@@ -249,7 +248,6 @@ namespace Gato_Tic_Tac_Toe
             // recreate the new Bitmap
             return Bitmap.CreateBitmap(mBitmap, 0, 0, width, height, matrix, true);
         }
-        
         int logicaQuienGana()
         {
 
@@ -318,7 +316,7 @@ namespace Gato_Tic_Tac_Toe
             array[7] = motorJS.CallGlobalFunction<int>("getCasilla", 7);
             array[8] = motorJS.CallGlobalFunction<int>("getCasilla", 8);
             array[9] = motorJS.CallGlobalFunction<int>("getCasilla", 9);
-            this.casillas = array;
+            casillas = array;
 
             if (casillas[1] == M) pintaX(1);
             if (casillas[2] == M) pintaX(2);
@@ -343,7 +341,6 @@ namespace Gato_Tic_Tac_Toe
             logicaQuienGana();
 
         }
-        
         private void Click1(object sender, System.EventArgs e)
         {
             analisaSecretContador();
@@ -354,9 +351,9 @@ namespace Gato_Tic_Tac_Toe
         {
             if (this.secretContador >= 3 && this.secretContador2 >= 3)
             {
-                this.casillas[1] = H;
-                this.casillas[2] = H;
-                this.casillas[3] = H;
+                casillas[1] = H;
+                casillas[2] = H;
+                casillas[3] = H;
 
                 setArray();
                 logicaQuienGana();

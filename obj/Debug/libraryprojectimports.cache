@@ -1,9 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Paths>
   <Jars>
-    <Jar>obj\Debug\lp\1\jl\okhttp-2.4.0.jar</Jar>
-    <Jar>obj\Debug\lp\2\jl\okio-1.5.0.jar</Jar>
-    <Jar>obj\Debug\lp\3\jl\picasso-2.5.2.jar</Jar>
     <Jar>C:\Users\a1100\Documents\Visual Studio 2017\Projects\GUIGato\Gato Tic Tac Toe\obj\Debug\lp\1\jl\okhttp-2.4.0.jar</Jar>
     <Jar>C:\Users\a1100\Documents\Visual Studio 2017\Projects\GUIGato\Gato Tic Tac Toe\obj\Debug\lp\2\jl\okio-1.5.0.jar</Jar>
     <Jar>C:\Users\a1100\Documents\Visual Studio 2017\Projects\GUIGato\Gato Tic Tac Toe\obj\Debug\lp\3\jl\picasso-2.5.2.jar</Jar>

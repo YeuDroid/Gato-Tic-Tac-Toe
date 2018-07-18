@@ -3,7 +3,7 @@
   <PropertyGroup>
     <SelectedDevice>LGE LGMS631</SelectedDevice>
     <DefaultDevice>Nexus_S_API_21</DefaultDevice>
-    <AndroidDesignerPreferredDevice>Nexus 4</AndroidDesignerPreferredDevice>
+    <AndroidDesignerPreferredDevice>Nexus 5</AndroidDesignerPreferredDevice>
     <AndroidDesignerPreferredTheme>Theme.Custom</AndroidDesignerPreferredTheme>
   </PropertyGroup>
 </Project>

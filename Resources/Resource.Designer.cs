@@ -72,17 +72,17 @@ namespace Gato_Tic_Tac_Toe
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f060014
-			public const int btn_iniciaH = 2131099668;
+			// aapt resource value: 0x7f060015
+			public const int btn_iniciaH = 2131099669;
 			
-			// aapt resource value: 0x7f060013
-			public const int btn_iniciaM = 2131099667;
+			// aapt resource value: 0x7f060014
+			public const int btn_iniciaM = 2131099668;
 			
 			// aapt resource value: 0x7f060001
 			public const int btn_reset = 2131099649;
 			
-			// aapt resource value: 0x7f060012
-			public const int btn_salir = 2131099666;
+			// aapt resource value: 0x7f060013
+			public const int btn_salir = 2131099667;
 			
 			// aapt resource value: 0x7f060004
 			public const int imageView1 = 2131099652;
@@ -134,6 +134,9 @@ namespace Gato_Tic_Tac_Toe
 			
 			// aapt resource value: 0x7f060010
 			public const int tv_devolped = 2131099664;
+			
+			// aapt resource value: 0x7f060012
+			public const int tv_id = 2131099666;
 			
 			static Id()
 			{
