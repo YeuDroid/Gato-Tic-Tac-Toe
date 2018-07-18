@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2010
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gato Tic Tac Toe", "Gato Tic Tac Toe.csproj", "{5C075ADF-539F-4E62-962F-1BE438CBD205}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppTestLAyo", "..\AppTestLAyo\AppTestLAyo.csproj", "{3C7E6C64-B084-4205-88E2-2BFA7411B220}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5C075ADF-539F-4E62-962F-1BE438CBD205}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C075ADF-539F-4E62-962F-1BE438CBD205}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C075ADF-539F-4E62-962F-1BE438CBD205}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{5C075ADF-539F-4E62-962F-1BE438CBD205}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C075ADF-539F-4E62-962F-1BE438CBD205}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5C075ADF-539F-4E62-962F-1BE438CBD205}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{3C7E6C64-B084-4205-88E2-2BFA7411B220}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C7E6C64-B084-4205-88E2-2BFA7411B220}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C7E6C64-B084-4205-88E2-2BFA7411B220}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{3C7E6C64-B084-4205-88E2-2BFA7411B220}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C7E6C64-B084-4205-88E2-2BFA7411B220}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C7E6C64-B084-4205-88E2-2BFA7411B220}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {814BB4D3-9524-4718-8E72-B4E1BE8C30D3}
+	EndGlobalSection
+EndGlobal

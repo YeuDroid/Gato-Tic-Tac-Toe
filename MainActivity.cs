@@ -3,6 +3,7 @@ using Android.Widget;
 using Android.OS;
 using Android.Util;
 using System;
+using Android.Content;
 
 namespace Gato_Tic_Tac_Toe
 {
@@ -20,10 +21,11 @@ namespace Gato_Tic_Tac_Toe
             
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.MainLayout);
+            
             // JURRASIC ENCRIPTER
             var txt_raw = Resources.GetString(Resource.String.CODEJS);
             var jsraw = Base64.Base64Decode(txt_raw);
-            message(jsraw);
+           // message(jsraw);
             motorJS.Evaluate(jsraw);
 
             //ids
@@ -256,7 +258,9 @@ namespace Gato_Tic_Tac_Toe
         
         private void Click1(object sender, System.EventArgs e)
         {
-            accionHumanoLO(1);
+           
+            this.StartActivity(typeof(ActivitySectret));
+            //  accionHumanoLO(1);
         }
         private void Click2(object sender, System.EventArgs e)
         {

@@ -1,3 +1,7 @@
+Gato_Tic_Tac_Toe.ActivitySectret, Gato Tic Tac Toe;md5ed267ff0e1980c9a4aea120edc6cd8ef.ActivitySectret
+Gato_Tic_Tac_Toe.ActivitySectret, Gato Tic Tac Toe, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md5ed267ff0e1980c9a4aea120edc6cd8ef.ActivitySectret
+Gato_Tic_Tac_Toe.ActivitySectret;md5ed267ff0e1980c9a4aea120edc6cd8ef.ActivitySectret
+gato_tic_tac_toe.ActivitySectret;md5ed267ff0e1980c9a4aea120edc6cd8ef.ActivitySectret
 Gato_Tic_Tac_Toe.MainActivity, Gato Tic Tac Toe;md5ed267ff0e1980c9a4aea120edc6cd8ef.MainActivity
 Gato_Tic_Tac_Toe.MainActivity, Gato Tic Tac Toe, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md5ed267ff0e1980c9a4aea120edc6cd8ef.MainActivity
 Gato_Tic_Tac_Toe.MainActivity;md5ed267ff0e1980c9a4aea120edc6cd8ef.MainActivity

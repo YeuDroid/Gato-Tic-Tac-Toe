@@ -16,6 +16,7 @@ public final class R {
         public static final int x=0x7f020002;
     }
     public static final class id {
+        public static final int btn_salir=0x7f060010;
         public static final int imageView1=0x7f060003;
         public static final int imageView2=0x7f060004;
         public static final int imageView3=0x7f060005;
@@ -34,8 +35,9 @@ public final class R {
         public static final int textView1=0x7f06000f;
     }
     public static final class layout {
-        public static final int main=0x7f040000;
+        public static final int layout1=0x7f040000;
         public static final int mainlayout=0x7f040001;
+        public static final int pierdegato=0x7f040002;
     }
     public static final class mipmap {
         public static final int ic_launcher=0x7f030000;

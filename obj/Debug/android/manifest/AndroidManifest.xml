@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="Gato_Tic_Tac_Toe.Gato_Tic_Tac_Toe" android:versionCode="1" android:versionName="1.0">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="Gato_Tic_Tac_Toe.Gato_Tic_Tac_Toe" android:versionCode="1" android:versionName="1.0" android:installLocation="auto">
   <!--suppress UsesMinSdkAttributes-->
-  <uses-sdk android:minSdkVersion="21" />
+  <uses-sdk android:minSdkVersion="14" />
   <uses-permission android:name="android.permission.INTERNET" />
   <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-  <application android:allowBackup="true" android:label="@string/app_name" android:name="android.app.Application" android:debuggable="true">
+  <application android:allowBackup="true" android:label="@string/app_name" android:icon="@mipmap/ic_launcher" android:name="android.app.Application" android:debuggable="true">
+    <activity android:label="ActivitySectret" android:name="md5ed267ff0e1980c9a4aea120edc6cd8ef.ActivitySectret" />
     <activity android:label="Super Gato" android:screenOrientation="portrait" android:name="md5ed267ff0e1980c9a4aea120edc6cd8ef.MainActivity">
       <intent-filter>
         <action android:name="android.intent.action.MAIN" />

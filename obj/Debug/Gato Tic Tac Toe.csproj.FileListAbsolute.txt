@@ -3,13 +3,13 @@ C:\Users\a1100\Documents\Visual Studio 2017\Projects\GUIGato\Gato Tic Tac Toe\bi
 C:\Users\a1100\Documents\Visual Studio 2017\Projects\GUIGato\Gato Tic Tac Toe\bin\Debug\Gato_Tic_Tac_Toe.Gato_Tic_Tac_Toe.apk
 C:\Users\a1100\Documents\Visual Studio 2017\Projects\GUIGato\Gato Tic Tac Toe\bin\Debug\Gato_Tic_Tac_Toe.Gato_Tic_Tac_Toe-Signed.apk
 C:\Users\a1100\Documents\Visual Studio 2017\Projects\GUIGato\Gato Tic Tac Toe\bin\Debug\Jurassic.dll
-C:\Users\a1100\Documents\Visual Studio 2017\Projects\GUIGato\Gato Tic Tac Toe\obj\Debug\Gato Tic Tac Toe.csprojResolveAssemblyReference.cache
 C:\Users\a1100\Documents\Visual Studio 2017\Projects\GUIGato\Gato Tic Tac Toe\obj\Debug\Gato Tic Tac Toe.csproj.CoreCompileInputs.cache
 C:\Users\a1100\Documents\Visual Studio 2017\Projects\GUIGato\Gato Tic Tac Toe\obj\Debug\Gato Tic Tac Toe.dll
 C:\Users\a1100\Documents\Visual Studio 2017\Projects\GUIGato\Gato Tic Tac Toe\obj\Debug\Gato Tic Tac Toe.pdb
 C:\Users\a1100\Documents\Visual Studio 2017\Projects\GUIGato\Gato Tic Tac Toe\obj\Debug\android\bin\Gato_Tic_Tac_Toe.Gato_Tic_Tac_Toe.apk
 C:\Users\a1100\Documents\Visual Studio 2017\Projects\GUIGato\Gato Tic Tac Toe\obj\Debug\res\layout\mainlayout.xml
-C:\Users\a1100\Documents\Visual Studio 2017\Projects\GUIGato\Gato Tic Tac Toe\obj\Debug\res\layout\main.xml
+C:\Users\a1100\Documents\Visual Studio 2017\Projects\GUIGato\Gato Tic Tac Toe\obj\Debug\res\layout\pierdegato.xml
+C:\Users\a1100\Documents\Visual Studio 2017\Projects\GUIGato\Gato Tic Tac Toe\obj\Debug\res\layout\layout1.xml
 C:\Users\a1100\Documents\Visual Studio 2017\Projects\GUIGato\Gato Tic Tac Toe\obj\Debug\res\values\strings.xml
 C:\Users\a1100\Documents\Visual Studio 2017\Projects\GUIGato\Gato Tic Tac Toe\obj\Debug\res\mipmap-hdpi\ic_launcher.png
 C:\Users\a1100\Documents\Visual Studio 2017\Projects\GUIGato\Gato Tic Tac Toe\obj\Debug\res\mipmap-mdpi\ic_launcher.png
@@ -21,10 +21,11 @@ C:\Users\a1100\Documents\Visual Studio 2017\Projects\GUIGato\Gato Tic Tac Toe\ob
 C:\Users\a1100\Documents\Visual Studio 2017\Projects\GUIGato\Gato Tic Tac Toe\obj\Debug\res\drawable\x.png
 C:\Users\a1100\Documents\Visual Studio 2017\Projects\GUIGato\Gato Tic Tac Toe\obj\Debug\R.cs.flag
 C:\Users\a1100\Documents\Visual Studio 2017\Projects\GUIGato\Gato Tic Tac Toe\obj\Debug\uploadflags.txt
+C:\Users\a1100\Documents\Visual Studio 2017\Projects\GUIGato\Gato Tic Tac Toe\obj\Debug\Gato Tic Tac Toe.csprojResolveAssemblyReference.cache
 C:\Users\a1100\Documents\Visual Studio 2017\Projects\GUIGato\Gato Tic Tac Toe\bin\Debug\Gato Tic Tac Toe.dll.mdb
 C:\Users\a1100\Documents\Visual Studio 2017\Projects\GUIGato\Gato Tic Tac Toe\obj\Debug\android\assets\Gato Tic Tac Toe.dll.mdb
+obj\Debug\linksrc\Mono.Android.pdb
 C:\Users\a1100\Documents\Visual Studio 2017\Projects\GUIGato\Gato Tic Tac Toe\bin\Debug\Gato Tic Tac Toe.dll
-bin\Debug\Mono.Android.pdb
 bin\Debug\mscorlib.pdb
 bin\Debug\System.Core.pdb
 bin\Debug\System.pdb
@@ -35,7 +36,6 @@ bin\Debug\System.ServiceModel.Internals.pdb
 bin\Debug\Mono.Security.pdb
 bin\Debug\System.ComponentModel.Composition.pdb
 obj\Debug\linksrc\Gato Tic Tac Toe.dll.mdb
-obj\Debug\linksrc\Mono.Android.pdb
 obj\Debug\linksrc\mscorlib.pdb
 obj\Debug\linksrc\System.Core.pdb
 obj\Debug\linksrc\System.pdb
