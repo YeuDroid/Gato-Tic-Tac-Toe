@@ -1,6 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Paths>
-  <Jars />
+  <Jars>
+    <Jar>C:\Users\a1100\Documents\Visual Studio 2017\Projects\GUIGato\Gato Tic Tac Toe\obj\Debug\lp\2\jl\support-annotations.jar</Jar>
+    <Jar>C:\Users\a1100\Documents\Visual Studio 2017\Projects\GUIGato\Gato Tic Tac Toe\obj\Debug\lp\3\jl\bin\classes.jar</Jar>
+    <Jar>C:\Users\a1100\Documents\Visual Studio 2017\Projects\GUIGato\Gato Tic Tac Toe\obj\Debug\lp\4\jl\bin\classes.jar</Jar>
+    <Jar>C:\Users\a1100\Documents\Visual Studio 2017\Projects\GUIGato\Gato Tic Tac Toe\obj\Debug\lp\5\jl\bin\classes.jar</Jar>
+    <Jar>C:\Users\a1100\Documents\Visual Studio 2017\Projects\GUIGato\Gato Tic Tac Toe\obj\Debug\lp\6\jl\bin\classes.jar</Jar>
+    <Jar>C:\Users\a1100\Documents\Visual Studio 2017\Projects\GUIGato\Gato Tic Tac Toe\obj\Debug\lp\7\jl\bin\classes.jar</Jar>
+    <Jar>C:\Users\a1100\Documents\Visual Studio 2017\Projects\GUIGato\Gato Tic Tac Toe\obj\Debug\lp\8\jl\bin\classes.jar</Jar>
+    <Jar>C:\Users\a1100\Documents\Visual Studio 2017\Projects\GUIGato\Gato Tic Tac Toe\obj\Debug\lp\9\jl\glide-full-4.1.1.jar</Jar>
+  </Jars>
   <ResolvedResourceDirectories />
   <ResolvedAssetDirectories />
   <ResolvedEnvironmentFiles />

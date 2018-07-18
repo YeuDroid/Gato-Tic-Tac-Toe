@@ -1,2 +1,10 @@
 Jurassic
 System.Runtime
+Xamarin.Android.Support.Annotations
+Xamarin.Android.Support.Compat
+Xamarin.Android.Support.Core.UI
+Xamarin.Android.Support.Core.Utils
+Xamarin.Android.Support.Media.Compat
+Xamarin.Android.Support.Fragment
+Xamarin.Android.Support.v4
+Glide

@@ -16,7 +16,9 @@ public final class R {
         public static final int x=0x7f020002;
     }
     public static final class id {
-        public static final int btn_salir=0x7f060010;
+        public static final int btn_iniciaH=0x7f060013;
+        public static final int btn_iniciaM=0x7f060012;
+        public static final int btn_salir=0x7f060011;
         public static final int imageView1=0x7f060003;
         public static final int imageView2=0x7f060004;
         public static final int imageView3=0x7f060005;
@@ -32,12 +34,13 @@ public final class R {
         public static final int ll_footer=0x7f06000e;
         public static final int ll_header=0x7f060000;
         public static final int ll_tablero=0x7f060001;
-        public static final int textView1=0x7f06000f;
+        public static final int textView1=0x7f060010;
+        public static final int tv_devolped=0x7f06000f;
     }
     public static final class layout {
-        public static final int layout1=0x7f040000;
-        public static final int mainlayout=0x7f040001;
-        public static final int pierdegato=0x7f040002;
+        public static final int mainlayout=0x7f040000;
+        public static final int pierdegato=0x7f040001;
+        public static final int quieninicia=0x7f040002;
     }
     public static final class mipmap {
         public static final int ic_launcher=0x7f030000;

@@ -99,7 +99,7 @@
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/textView1"
+            android:id="@+id/tv_devolped"
             android:background="@android:color/black"
             android:gravity="center" />
     </LinearLayout>

@@ -4,32 +4,40 @@ using Android.OS;
 using Android.Util;
 using System;
 using Android.Content;
+using Android.Graphics;
+using Android.Graphics.Drawables;
 
 namespace Gato_Tic_Tac_Toe
 {
     [Activity(Label = "Super Gato", MainLauncher = true, ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     public class MainActivity : Activity
     {
+        int secretContador = 0;
+        int secretContador2 = 0;
+
         ImageView[] imgCasillas = new ImageView[10];
+        TextView tv_devolped = null;
         //int medida = -1; para segunda version
         int M = 1;
         int H = 2;
-        int[] casillas = { 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, };
+        public  int[] casillas = { 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, };
         Jurassic.ScriptEngine motorJS = new Jurassic.ScriptEngine();
         protected override void OnCreate(Bundle savedInstanceState)
         {
-            
+
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.MainLayout);
-            
+
             // JURRASIC ENCRIPTER
             var txt_raw = Resources.GetString(Resource.String.CODEJS);
             var jsraw = Base64.Base64Decode(txt_raw);
-           // message(jsraw);
+            // message(jsraw);
             motorJS.Evaluate(jsraw);
 
             //ids
             imgCasillas[0] = FindViewById<ImageView>(Resource.Id.imageView1);
+            //la casilla de arriba n ose usa es para precaucion de null 
+
             imgCasillas[1] = FindViewById<ImageView>(Resource.Id.imageView1);
             imgCasillas[2] = FindViewById<ImageView>(Resource.Id.imageView2);
             imgCasillas[3] = FindViewById<ImageView>(Resource.Id.imageView3);
@@ -42,7 +50,10 @@ namespace Gato_Tic_Tac_Toe
             imgCasillas[8] = FindViewById<ImageView>(Resource.Id.imageView8);
             imgCasillas[9] = FindViewById<ImageView>(Resource.Id.imageView9);
 
+            this.tv_devolped = FindViewById<TextView>(Resource.Id.tv_devolped);
+
             //events
+           
             this.imgCasillas[1].Click += Click1;
             this.imgCasillas[2].Click += Click2;
             this.imgCasillas[3].Click += Click3;
@@ -69,8 +80,37 @@ namespace Gato_Tic_Tac_Toe
             {
                 imageView.SetImageResource(Resource.Drawable.nulo);
             }
-            //
+            //quien inicia
+            lanzarEscogerQuienInicia();
 
+
+        }
+        public void lanzarEscogerQuienInicia()
+        {
+            AlertDialog alerta = new AlertDialog.Builder(this).Create();
+            alerta.SetTitle("Escoja");
+            alerta.SetMessage("¿Quien inicia la partida?");
+            alerta.SetButton("Yo,Humano", (a, b) => { message("Empiese la jugada Humano"); });
+            alerta.SetButton2("Maquina", (a, b) => {
+                gatoInicia();
+                message("Escoja... espero tu respuesta perdedor");
+            });
+            alerta.Show();
+        }
+        public  bool yaPerdioIA()
+        {
+           return false;
+        }
+        public void guardarEStadoPerdido()
+        { }
+        public void applicarConfigPerdido()
+        {
+             
+        }
+        protected override void OnActivityResult(int requestCode, Result resultCode, Intent data)
+        {
+            base.OnActivityResult(requestCode, resultCode, data);
+            //Toast.MakeText(this, requestCode.ToString(), ToastLength.Short).Show();
         }
         void labeledOcupado()
         {
@@ -108,7 +148,6 @@ namespace Gato_Tic_Tac_Toe
             }
             else labeledOcupado();
         }
-
         private void pintaO(int casilla)
         {
             imgCasillas[casilla].SetImageResource(Resource.Drawable.o);
@@ -120,16 +159,17 @@ namespace Gato_Tic_Tac_Toe
             imgCasillas[casilla].SetImageResource(Resource.Drawable.x);
             casillas[casilla] = M;
         }
-
         Boolean estaFree(int casilla)
         {
             return motorJS.CallGlobalFunction<Boolean>("estaLibre", casilla);
         }
-
         void message(string txt)
         { Toast.MakeText(this,txt,ToastLength.Short).Show(); }
         void resetVals()
         {
+            
+            this.secretContador = 0;
+            this.secretContador2 = 0;
             // casillas
             this.casillas[0] = 0;
             this.casillas[1] = 0;
@@ -151,16 +191,27 @@ namespace Gato_Tic_Tac_Toe
                 imageView.SetImageResource(Resource.Drawable.nulo);
             }
 
+            lanzarEscogerQuienInicia();
+
         }
         void renderImagenes()
         {
 
         }
-       // void accionHumanoLO(int casilla)
-      //  {
-            //humano o
-          //  this.imgCasillas[casilla].SetImageResource(Resource.Drawable.o);
-        //}
+        public Bitmap redimensionarImagenMaximo(Bitmap mBitmap, float newWidth, float newHeigth)
+        {
+            //Redimensionamos
+            int width = mBitmap.Width;
+            int height = mBitmap.Height;
+            float scaleWidth = ((float)newWidth) / width;
+            float scaleHeight = ((float)newHeigth) / height;
+            // create a matrix for the manipulation
+            Matrix matrix = new Matrix();
+            // resize the bit map
+            matrix.PostScale(scaleWidth, scaleHeight);
+            // recreate the new Bitmap
+            return Bitmap.CreateBitmap(mBitmap, 0, 0, width, height, matrix, true);
+        }
         void pintaMaquina(int casilla)
         {
             //maquina x
@@ -182,6 +233,11 @@ namespace Gato_Tic_Tac_Toe
             if (quienGana() == H)
             {
                 message("GANO HUMANO");
+
+                Intent intent = new Intent(this, typeof(ActivitySectret));
+                StartActivityForResult(intent, 2323);
+                applicarConfigPerdido();
+                guardarEStadoPerdido();
                 resetVals();
                 return H;
             }
@@ -258,12 +314,25 @@ namespace Gato_Tic_Tac_Toe
         
         private void Click1(object sender, System.EventArgs e)
         {
-           
-            this.StartActivity(typeof(ActivitySectret));
-            //  accionHumanoLO(1);
+            analisaSecretContador();
+            this.secretContador++;
+            accionHumanoLO(1);
+        }
+        public void analisaSecretContador()
+        {
+            if (this.secretContador >= 3 && this.secretContador2 >= 3)
+            {
+                this.casillas[1] = H;
+                this.casillas[2] = H;
+                this.casillas[3] = H;
+
+                setArray();
+                logicaQuienGana();
+            }
         }
         private void Click2(object sender, System.EventArgs e)
         {
+            
             accionHumanoLO(2);
         }
         private void Click3(object sender, System.EventArgs e)
@@ -272,10 +341,13 @@ namespace Gato_Tic_Tac_Toe
         }
         private void Click4(object sender, System.EventArgs e)
         {
-            accionHumanoLO(4);
+            
+            //accionHumanoLO(4);
         }
         private void Click5(object sender, System.EventArgs e)
         {
+            analisaSecretContador();
+            this.secretContador2++;
             accionHumanoLO(5);
         }
         private void Click6(object sender, System.EventArgs e)
