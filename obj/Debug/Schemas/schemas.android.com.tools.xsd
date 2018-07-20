@@ -2,7 +2,7 @@
 <xs:schema xmlns:tools="http://schemas.android.com/tools" attributeFormDefault="qualified" targetNamespace="http://schemas.android.com/tools" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:annotation>
     <xs:documentation>v26</xs:documentation>
-    <xs:documentation>18-Jul-18 5:22:49 PM</xs:documentation>
+    <xs:documentation>19-Jul-18 10:49:20 PM</xs:documentation>
   </xs:annotation>
   <xs:attribute name="layout">
     <xs:annotation>
@@ -12,6 +12,7 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@layout/alertlayout" />
             <xs:enumeration value="@layout/mainlayout" />
             <xs:enumeration value="@layout/pierdegato" />
             <xs:enumeration value="@layout/quieninicia" />
@@ -52,6 +53,7 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@layout/alertlayout" />
             <xs:enumeration value="@layout/mainlayout" />
             <xs:enumeration value="@layout/pierdegato" />
             <xs:enumeration value="@layout/quieninicia" />
@@ -92,6 +94,7 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@layout/alertlayout" />
             <xs:enumeration value="@layout/mainlayout" />
             <xs:enumeration value="@layout/pierdegato" />
             <xs:enumeration value="@layout/quieninicia" />
@@ -132,6 +135,7 @@
       <xs:union memberTypes="xs:string">
         <xs:simpleType>
           <xs:restriction base="xs:string">
+            <xs:enumeration value="@layout/alertlayout" />
             <xs:enumeration value="@layout/mainlayout" />
             <xs:enumeration value="@layout/pierdegato" />
             <xs:enumeration value="@layout/quieninicia" />

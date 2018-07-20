@@ -102,7 +102,7 @@
         android:layout_weight="5"
         android:gravity="center">
         <TextView
-            android:text="Developed by YeuLabs(TM)"
+            android:text="MotionIntelligence(TM) by YeuLabs"
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

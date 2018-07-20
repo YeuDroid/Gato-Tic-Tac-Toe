@@ -9,7 +9,7 @@ using Android.Graphics.Drawables;
 
 namespace Gato_Tic_Tac_Toe
 {
-    
+
     [Activity(Label = "Super Gato", MainLauncher = true, ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
 
     public class MainActivity : Activity
@@ -18,13 +18,19 @@ namespace Gato_Tic_Tac_Toe
         int secretContador = 0;
         int secretContador2 = 0;
 
+        //version delayed
+        System.Threading.Thread hilo = null;
+        Boolean lockActionHuman = false;
+        //version delayed
+
         ImageView[] imgCasillas = new ImageView[10];
         TextView tv_devolped = null;
         Button btn_rst_juego = null;
-
+        
         //int medida = -1; para segunda version
         int M = 1;
         int H = 2;
+        
         public static int[] casillas = { 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, };
         Jurassic.ScriptEngine motorJS = new Jurassic.ScriptEngine();
         protected override void OnCreate(Bundle savedInstanceState)
@@ -60,6 +66,8 @@ namespace Gato_Tic_Tac_Toe
 
             //events
             this.btn_rst_juego.Click += Btn_rst_juego_Click;
+            this.tv_devolped.LongClick += Tv_devolped_LongClick;
+
             this.imgCasillas[1].Click += Click1;
             this.imgCasillas[2].Click += Click2;
             this.imgCasillas[3].Click += Click3;
@@ -79,44 +87,59 @@ namespace Gato_Tic_Tac_Toe
 
             //no render mas de 1024
             if (medida >= 1024) medida = 1024;
-
+            this.hilo = new System.Threading.Thread(delayerHilo);
 
             //
             foreach (var imageView in this.imgCasillas)
             {
-                Square.Picasso.Picasso.With(this).Load(Resource.Drawable.nulo).Resize(medida,medida).Into(imageView);
+                Square.Picasso.Picasso.With(this).Load(Resource.Drawable.nulo).Resize(medida, medida).Into(imageView);
             }
             //quien inicia
             lanzarEscogerQuienInicia();
 
-
         }
+
+        private void Tv_devolped_LongClick(object sender, Android.Views.View.LongClickEventArgs e)
+        {
+            AlertDialog alerta = new AlertDialog.Builder(this).Create();
+            alerta.SetTitle("Information");
+           // alerta.SetIcon(Resource.Drawable.gato);
+            alerta.SetMessage("IAMotion V 19-05-18-BETA, APP Version: Black Edition 0.45 BETA");
+            
+            alerta.SetButton2("ok", (a, b) =>
+            {
+                ;
+            });
+            alerta.Show();
+        }
+
         private void Btn_rst_juego_Click(object sender, EventArgs e)
         {
 
 
             AlertDialog alerta = new AlertDialog.Builder(this).Create();
             alerta.SetTitle("Cobarde");
-            alerta.SetIcon(Resource.Drawable.gato);
+            //alerta.SetIcon(Resource.Drawable.gato);
             alerta.SetMessage("¿Quieres realmente reiniciar la partida?");
-            alerta.SetButton("Si", (a, b) => 
+            alerta.SetButton("Si", (a, b) =>
             {
                 resetVals();
                 message("Juego reiniciado...");
             });
-            alerta.SetButton2("No, cancelar", (a, b) => 
+            alerta.SetButton2("No, cancelar", (a, b) =>
             {
                 ;
             });
             alerta.Show();
 
-            
+
         }
         public void lanzarEscogerQuienInicia()
         {
+            
             AlertDialog alerta = new AlertDialog.Builder(this).Create();
             alerta.SetTitle("Escoja");
-            alerta.SetIcon(Resource.Drawable.gato);
+          //  alerta.SetIcon(Resource.Drawable.gato);
             alerta.SetMessage("¿Quien inicia la partida?");
             alerta.SetButton("Yo,Humano", (a, b) => { message("Empiese la jugada Humano"); });
             alerta.SetButton2("Maquina", (a, b) => {
@@ -154,12 +177,14 @@ namespace Gato_Tic_Tac_Toe
         {
             motorJS.CallGlobalFunction("IAGatoMovs");
         }
-        int quienGana()
+        int quienGanak()
         {
             return motorJS.CallGlobalFunction<int>("quienGana");
         }
         void accionHumanoLO(int cas)
         {
+            if (this.lockActionHuman) return;
+
             if (estaFree(cas))
             {
                 labeledJugando();
@@ -179,18 +204,31 @@ namespace Gato_Tic_Tac_Toe
         private void pintaO(int casilla)
         {
             //   imgCasillas[casilla].SetImageResource(Resource.Drawable.o);
-            Square.Picasso.Picasso.With(this).Load(Resource.Drawable.o).Resize(medida,medida).Into(imgCasillas[casilla]);
+            Square.Picasso.Picasso.With(this).Load(Resource.Drawable.o).Resize(medida, medida).Into(imgCasillas[casilla]);
+            casillas[casilla] = H;
+            setArray();
+        }
+        private void pintaONeg(int casilla)
+        {
+            //   imgCasillas[casilla].SetImageResource(Resource.Drawable.o);
+            Square.Picasso.Picasso.With(this).Load(Resource.Drawable.o_neg).Resize(medida, medida).Into(imgCasillas[casilla]);
             casillas[casilla] = H;
             setArray();
         }
         private void pintaNulos(int casilla)
         {
-            Square.Picasso.Picasso.With(this).Load(Resource.Drawable.nulo).Resize(medida,medida).Into(imgCasillas[casilla]);
+            Square.Picasso.Picasso.With(this).Load(Resource.Drawable.nulo).Resize(medida, medida).Into(imgCasillas[casilla]);
         }
         private void pintaX(int casilla)
         {
             //  imgCasillas[casilla].SetImageResource(Resource.Drawable.x);
-            Square.Picasso.Picasso.With(this).Load(Resource.Drawable.x).Resize(medida,medida).Into(imgCasillas[casilla]);
+            Square.Picasso.Picasso.With(this).Load(Resource.Drawable.x).Resize(medida, medida).Into(imgCasillas[casilla]);
+            casillas[casilla] = M;
+        }
+        private void pintaXNeg(int casilla)
+        {
+            //  imgCasillas[casilla].SetImageResource(Resource.Drawable.x);
+            Square.Picasso.Picasso.With(this).Load(Resource.Drawable.x_neg).Resize(medida, medida).Into(imgCasillas[casilla]);
             casillas[casilla] = M;
         }
         Boolean estaFree(int casilla)
@@ -198,10 +236,10 @@ namespace Gato_Tic_Tac_Toe
             return motorJS.CallGlobalFunction<Boolean>("estaLibre", casilla);
         }
         void message(string txt)
-        { Toast.MakeText(this,txt,ToastLength.Short).Show(); }
+        { Toast.MakeText(this, txt, ToastLength.Short).Show(); }
         void resetVals()
         {
-            
+            this.lockActionHuman = false;
             this.secretContador = 0;
             this.secretContador2 = 0;
             // casillas
@@ -220,11 +258,10 @@ namespace Gato_Tic_Tac_Toe
             casillas[9] = 0;
 
             setArray();
-
+            
             foreach (var imageView in this.imgCasillas)
             {
-                //                imageView.SetImageResource(Resource.Drawable.nulo);
-                Square.Picasso.Picasso.With(this).Load(Resource.Drawable.nulo).Resize(medida,medida).Into(imageView);
+                Square.Picasso.Picasso.With(this).Load(Resource.Drawable.nulo).Resize(medida, medida).Into(imageView);
             }
 
             lanzarEscogerQuienInicia();
@@ -248,21 +285,34 @@ namespace Gato_Tic_Tac_Toe
             // recreate the new Bitmap
             return Bitmap.CreateBitmap(mBitmap, 0, 0, width, height, matrix, true);
         }
+        public void delayerHilo()
+        {
+            //System.Threading.Thread.Sleep(1000);
+            //message("alive");
+            //resetVals();
+        }
         int logicaQuienGana()
         {
-
-            //maquina
-            if (quienGana() == M)
+            var estado = quienGana();
+            if (estado == 1)
             {
-                message("GANO MAQUINA");
+
+            }
+            //maquina
+            if (estado == M)
+            {
+                messageAlert("HA GANO LA INTELIGENCIA ARTIFICAL (MAQUINA), HAS PERDIDO HUMANO, ERES UNA VERGUENZA PARA TU RAZA.");
+
+                // debe pausar el codigo 
+
                 resetVals();
                 return M;
             }
 
             //humano        		
-            if (quienGana() == H)
+            if (estado == H)
             {
-                message("GANO HUMANO");
+                messageAlert("VAYA VAYA HAS PODIDO HAYAR EL ERROR EN EL PROGRAMA, O ERES SUPER INTELIGENTE, ERES UN DIGNO OPONENTE PARA MI CPU");
 
                 Intent intent = new Intent(this, typeof(ActivitySectret));
                 StartActivityForResult(intent, 2323);
@@ -272,9 +322,9 @@ namespace Gato_Tic_Tac_Toe
                 return H;
             }
 
-            if (quienGana() == 3)
+            if (estado == 3)
             {
-                message("NADIE GANO...");
+                messageAlert("NADIE HA GANADO Y NO CREO QUE ME GANES TE FALTAN MUCHAS NEURONAS PARA QUE PASE ESO...");
                 resetVals();
                 return 3;
             }
@@ -295,6 +345,26 @@ namespace Gato_Tic_Tac_Toe
             motorJS.CallGlobalFunction<int>("setCasilla", 8, casillas[8]);
             motorJS.CallGlobalFunction<int>("setCasilla", 9, casillas[9]);
 
+        }
+        public void messageAlert(string txt)
+        {
+            FragmentTransaction ft = FragmentManager.BeginTransaction();
+            //Remove fragment else it will crash as it is already added to backstack
+            Fragment prev = FragmentManager.FindFragmentByTag("dialog");
+            if (prev != null)
+            {
+                ft.Remove(prev);
+            }
+
+            ft.AddToBackStack(null);
+
+            // Create and show the dialog.
+            Bundle bundle = new Bundle();
+            bundle.PutString("texto_main",txt);
+            DialogFragment1 newFragment = DialogFragment1.NewInstance(bundle);
+
+            //Add fragment
+            newFragment.Show(ft, "dialog");
         }
         void gatoInicia()
         {
@@ -343,8 +413,8 @@ namespace Gato_Tic_Tac_Toe
         }
         private void Click1(object sender, System.EventArgs e)
         {
-            analisaSecretContador();
-            this.secretContador++;
+            //analisaSecretContador();
+            //this.secretContador++;
             accionHumanoLO(1);
         }
         public void analisaSecretContador()
@@ -361,7 +431,7 @@ namespace Gato_Tic_Tac_Toe
         }
         private void Click2(object sender, System.EventArgs e)
         {
-            
+
             accionHumanoLO(2);
         }
         private void Click3(object sender, System.EventArgs e)
@@ -370,14 +440,13 @@ namespace Gato_Tic_Tac_Toe
         }
         private void Click4(object sender, System.EventArgs e)
         {
-         
-            
             accionHumanoLO(4);
         }
         private void Click5(object sender, System.EventArgs e)
         {
-            analisaSecretContador();
-            this.secretContador2++;
+            //analisaSecretContador();
+            //this.secretContador2++;
+            
             accionHumanoLO(5);
         }
         private void Click6(object sender, System.EventArgs e)
@@ -404,6 +473,224 @@ namespace Gato_Tic_Tac_Toe
             int height = metrics.HeightPixels; // alto absoluto en pixels 
 
             return width;
+        }
+        public int quienGana()
+        {    //delado
+                if (casillas[1] == 1 && casillas[2] == 1 && casillas[3] == 1)
+               {
+                pintaXNeg(1);
+                pintaXNeg(2);
+                pintaXNeg(3);
+                return M;
+               }
+
+                if (casillas[4] == 1 && casillas[5] == 1 && casillas[6] == 1)
+              {
+
+                this.lockActionHuman = true;
+
+                //new System.Threading.Thread(new System.Threading.ThreadStart(() => {
+                //    RunOnUiThread(() => {
+
+                //        System.Threading.Thread.Sleep(500);
+                pintaXNeg(4);
+                pintaXNeg(5);
+                pintaXNeg(6);
+                //    });
+                //})).Start();
+
+                return M;
+            }
+
+            if (casillas[7] == 1 && casillas[8] == 1 && casillas[9] == 1)
+            {
+
+                this.lockActionHuman = true;
+
+                //new System.Threading.Thread(new System.Threading.ThreadStart(() => {
+                //    RunOnUiThread(() => {
+
+                //        System.Threading.Thread.Sleep(500);
+                pintaXNeg(7);
+                pintaXNeg(8);
+                pintaXNeg(9);
+                //    });
+                //})).Start();
+
+                return M;
+            }
+
+            //acostadas
+
+            if (casillas[1] == 1 && casillas[4] == 1 && casillas[7] == 1)
+            {
+                this.lockActionHuman = true;
+
+                //new System.Threading.Thread(new System.Threading.ThreadStart(() => {
+                //    RunOnUiThread(() => {
+
+                //        System.Threading.Thread.Sleep(500);
+                pintaXNeg(1);
+                pintaXNeg(4);
+                pintaXNeg(7);
+                //    });
+                //})).Start();
+
+                return M;
+            }
+
+            if (casillas[2] == 1 && casillas[5] == 1 && casillas[8] == 1)
+            {
+
+                this.lockActionHuman = true;
+
+                //new System.Threading.Thread(new System.Threading.ThreadStart(() => {
+                //    RunOnUiThread(() => {
+
+                //        System.Threading.Thread.Sleep(500);
+                pintaXNeg(2);
+                pintaXNeg(5);
+                pintaXNeg(8);
+                //    });
+                //})).Start();
+
+                return M;
+            }
+
+            if (casillas[3] == 1 && casillas[6] == 1 && casillas[9] == 1)
+            {
+
+                this.lockActionHuman = true;
+
+                //new System.Threading.Thread(new System.Threading.ThreadStart(() => {
+                //    RunOnUiThread(() => {
+
+                //        System.Threading.Thread.Sleep(500);
+                pintaXNeg(3);
+                pintaXNeg(6);
+                pintaXNeg(9);
+                //    });
+                //})).Start();
+
+                return M;
+            }
+
+            //diagonales
+
+            if (casillas[3] == 1 && casillas[5] == 1 && casillas[7] == 1)
+            {
+
+                this.lockActionHuman = true;
+
+                // new System.Threading.Thread(new System.Threading.ThreadStart(() => {
+                //     RunOnUiThread(() => {
+
+                //         System.Threading.Thread.Sleep(500);
+                pintaXNeg(3);
+                pintaXNeg(5);
+                pintaXNeg(7);
+                //     });
+                // })).Start();
+                //;
+                return M;
+            }
+
+            if (casillas[1] == 1 && casillas[5] == 1 && casillas[9] == 1)
+            {
+
+                this.lockActionHuman = true;
+
+                //new System.Threading.Thread(new System.Threading.ThreadStart(() => {
+                //    RunOnUiThread(() => {
+
+                //        System.Threading.Thread.Sleep(500);
+                pintaXNeg(1);
+                pintaXNeg(5);
+                pintaXNeg(9);
+                //    });
+                //})).Start();
+
+                return M;
+            }
+
+            //humano
+
+            //delado
+            if (casillas[1] == 2 && casillas[2] == 2 && casillas[3] == 2)
+            {
+                pintaONeg(1);
+                pintaONeg(2);
+                pintaONeg(3);
+                return H;
+            }
+
+            if (casillas[4] == 2 && casillas[5] == 2 && casillas[6] == 2)
+            {
+                pintaONeg(4);
+                pintaONeg(5);
+                pintaONeg(6);
+                return H;
+            }
+
+            if (casillas[7] == 2 && casillas[8] == 2 && casillas[9] == 2)
+            {
+                pintaONeg(7);
+                pintaONeg(8);
+                pintaONeg(9);
+                return H;
+            }
+
+            //acostadas
+
+            if (casillas[1] == 2 && casillas[4] == 2 && casillas[7] == 2)
+            {
+                pintaONeg(1);
+                pintaONeg(4);
+                pintaONeg(7);
+                return H;
+            }
+
+            if (casillas[2] == 2 && casillas[5] == 2 && casillas[8] == 2)
+            {
+                pintaONeg(2);
+                pintaONeg(5);
+                pintaONeg(8);
+                return H;
+            }
+
+            if (casillas[3] == 2 && casillas[6] == 2 && casillas[9] == 2)
+            {
+                pintaONeg(3);
+                pintaONeg(6);
+                pintaONeg(9);
+                return H;
+            }
+
+            //diagonales
+
+            if (casillas[3] == 2 && casillas[5] == 2 && casillas[7] == 2)
+            {
+                pintaONeg(3);
+                pintaONeg(5);
+                pintaONeg(7);
+                return H;
+            }
+
+            if (casillas[1] == 2 && casillas[5] == 2 && casillas[9] == 2)
+            {
+                pintaONeg(1);
+                pintaONeg(5);
+                pintaONeg(9);
+                return H;
+            };
+
+                //nadie gana
+                if (casillas[1] >= 1 && casillas[2] >= 1 && casillas[3] >= 1 && casillas[4] >= 1 && casillas[5] >= 1 && casillas[6] >= 1 && casillas[7] >= 1 && casillas[8] >= 1 && casillas[9] >= 1) return 3;
+
+                return -1;
+
+
+            
         }
     }
 }

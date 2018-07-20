@@ -28,7 +28,7 @@ namespace Gato_Tic_Tac_Toe
             this.btn_salir.Click += Btn_salir_Click;
             this.tv_id = FindViewById<TextView>(Resource.Id.tv_id);
 
-            this.tv_id.Text = "-" +MainActivity.casillas[1].ToString() + "-" + MainActivity.casillas[2].ToString() + "-"  + MainActivity.casillas[3].ToString()
+            this.tv_id.Text = " ID: :" +MainActivity.casillas[1].ToString() + "-" + MainActivity.casillas[2].ToString() + "-"  + MainActivity.casillas[3].ToString()
                 + "-"  + MainActivity.casillas[4].ToString() + "-" + MainActivity.casillas[5].ToString() + "-" +
                 MainActivity.casillas[6].ToString() + "-" + MainActivity.casillas[7].ToString() + "-" + "-" + MainActivity.casillas[8].ToString();
         }
