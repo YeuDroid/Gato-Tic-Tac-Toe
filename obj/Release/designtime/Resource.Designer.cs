@@ -24,10 +24,6 @@ namespace Gato_Tic_Tac_Toe
 			global::Android.Runtime.ResourceIdManager.UpdateIdValues();
 		}
 		
-		public static void UpdateIdValues()
-		{
-		}
-		
 		public partial class Drawable
 		{
 			

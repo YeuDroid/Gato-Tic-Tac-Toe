@@ -12,12 +12,11 @@ public final class R {
     }
     public static final class drawable {
         public static final int gato=0x7f020000;
-        public static final int gato2=0x7f020001;
-        public static final int nulo=0x7f020002;
-        public static final int o=0x7f020003;
-        public static final int o_neg=0x7f020004;
-        public static final int x=0x7f020005;
-        public static final int x_neg=0x7f020006;
+        public static final int nulo=0x7f020001;
+        public static final int o=0x7f020002;
+        public static final int o_neg=0x7f020003;
+        public static final int x=0x7f020004;
+        public static final int x_neg=0x7f020005;
     }
     public static final class id {
         public static final int btn_iniciaH=0x7f060017;

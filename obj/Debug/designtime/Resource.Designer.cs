@@ -24,6 +24,10 @@ namespace Gato_Tic_Tac_Toe
 			global::Android.Runtime.ResourceIdManager.UpdateIdValues();
 		}
 		
+		public static void UpdateIdValues()
+		{
+		}
+		
 		public partial class Drawable
 		{
 			
@@ -31,22 +35,19 @@ namespace Gato_Tic_Tac_Toe
 			public const int gato = 2130771970;
 			
 			// aapt resource value: 0x7F010003
-			public const int gato2 = 2130771971;
+			public const int nulo = 2130771971;
 			
 			// aapt resource value: 0x7F010004
-			public const int nulo = 2130771972;
+			public const int o = 2130771972;
 			
 			// aapt resource value: 0x7F010005
-			public const int o = 2130771973;
+			public const int o_neg = 2130771973;
 			
 			// aapt resource value: 0x7F010006
-			public const int o_neg = 2130771974;
+			public const int x = 2130771974;
 			
 			// aapt resource value: 0x7F010007
-			public const int x = 2130771975;
-			
-			// aapt resource value: 0x7F010008
-			public const int x_neg = 2130771976;
+			public const int x_neg = 2130771975;
 			
 			static Drawable()
 			{

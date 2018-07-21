@@ -24,7 +24,6 @@ C:\Users\a1100\Documents\Visual Studio 2017\Projects\GUIGato\Gato Tic Tac Toe\ob
 C:\Users\a1100\Documents\Visual Studio 2017\Projects\GUIGato\Gato Tic Tac Toe\obj\Debug\res\drawable\nulo.png
 C:\Users\a1100\Documents\Visual Studio 2017\Projects\GUIGato\Gato Tic Tac Toe\obj\Debug\res\drawable\o.png
 C:\Users\a1100\Documents\Visual Studio 2017\Projects\GUIGato\Gato Tic Tac Toe\obj\Debug\res\drawable\x.png
-C:\Users\a1100\Documents\Visual Studio 2017\Projects\GUIGato\Gato Tic Tac Toe\obj\Debug\res\drawable\gato2.png
 C:\Users\a1100\Documents\Visual Studio 2017\Projects\GUIGato\Gato Tic Tac Toe\obj\Debug\R.cs.flag
 C:\Users\a1100\Documents\Visual Studio 2017\Projects\GUIGato\Gato Tic Tac Toe\obj\Debug\R.txt
 C:\Users\a1100\Documents\Visual Studio 2017\Projects\GUIGato\Gato Tic Tac Toe\obj\Debug\uploadflags.txt

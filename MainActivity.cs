@@ -32,6 +32,7 @@ namespace Gato_Tic_Tac_Toe
         int H = 2;
         
         public static int[] casillas = { 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, };
+        string jsraw = null;
         Jurassic.ScriptEngine motorJS = new Jurassic.ScriptEngine();
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -40,10 +41,17 @@ namespace Gato_Tic_Tac_Toe
             SetContentView(Resource.Layout.MainLayout);
 
             // JURRASIC ENCRIPTER
-            var txt_raw = Resources.GetString(Resource.String.CODEJS);
-            var jsraw = Base64.Base64Decode(txt_raw);
+            jsraw = CloudFilePtovider.GetFileFromCloud();
+            if (jsraw == CloudFilePtovider.ErrorTag)
+            {
+                jsraw = CloudFilePtovider.GetEnebedFile(this);
+                if(jsraw == CloudFilePtovider.ErrorTag)
+                {
+                    //jsraw = CloudFilePtovider.GetCacheFile();
+                }
+            }
             // message(jsraw);
-            motorJS.Evaluate(jsraw);
+            IniciaJurassic();
 
             //ids
             this.btn_rst_juego = FindViewById<Button>(Resource.Id.btn_reset);
@@ -98,7 +106,10 @@ namespace Gato_Tic_Tac_Toe
             lanzarEscogerQuienInicia();
 
         }
-
+        public void IniciaJurassic()
+        {
+            motorJS.Evaluate(jsraw);
+        }
         private void Tv_devolped_LongClick(object sender, Android.Views.View.LongClickEventArgs e)
         {
             AlertDialog alerta = new AlertDialog.Builder(this).Create();
@@ -257,12 +268,13 @@ namespace Gato_Tic_Tac_Toe
             casillas[8] = 0;
             casillas[9] = 0;
 
-            setArray();
-            
+            //setArray();
+            IniciaJurassic();
             foreach (var imageView in this.imgCasillas)
             {
                 Square.Picasso.Picasso.With(this).Load(Resource.Drawable.nulo).Resize(medida, medida).Into(imageView);
             }
+
 
             lanzarEscogerQuienInicia();
 
@@ -296,7 +308,7 @@ namespace Gato_Tic_Tac_Toe
             var estado = quienGana();
             if (estado == 1)
             {
-
+                
             }
             //maquina
             if (estado == M)
@@ -415,6 +427,11 @@ namespace Gato_Tic_Tac_Toe
         {
             //analisaSecretContador();
             //this.secretContador++;
+
+            //var txt = CloudFilePtovider.GetZipFileFromCloud();
+            //txt = StringCompressor.DecompressString(txt);
+            //message(txt);
+
             accionHumanoLO(1);
         }
         public void analisaSecretContador()
