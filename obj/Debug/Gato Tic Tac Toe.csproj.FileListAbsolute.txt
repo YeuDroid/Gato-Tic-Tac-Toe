@@ -108,7 +108,6 @@ C:\Users\Yeu\Desktop\GUIGato\Gato Tic Tac Toe\bin\Debug\System.pdb
 C:\Users\Yeu\Desktop\GUIGato\Gato Tic Tac Toe\bin\Debug\System.Runtime.Serialization.pdb
 C:\Users\Yeu\Desktop\GUIGato\Gato Tic Tac Toe\bin\Debug\System.ServiceModel.Internals.pdb
 C:\Users\Yeu\Desktop\GUIGato\Gato Tic Tac Toe\bin\Debug\System.Xml.pdb
-C:\Users\Yeu\Desktop\GUIGato\Gato Tic Tac Toe\bin\Debug\Jurassic.dll
 C:\Users\Yeu\Desktop\GUIGato\Gato Tic Tac Toe\bin\Debug\Gato Tic Tac Toe.dll.mdb
 C:\Users\Yeu\Desktop\GUIGato\Gato Tic Tac Toe\obj\Debug\android\assets\Gato Tic Tac Toe.dll.mdb
 C:\Users\Yeu\Desktop\GUIGato\Gato Tic Tac Toe\obj\Debug\android\assets\Mono.Android.pdb
@@ -132,6 +131,7 @@ C:\Users\Yeu\Desktop\GUIGato\Gato Tic Tac Toe\obj\Debug\linksrc\System.pdb
 C:\Users\Yeu\Desktop\GUIGato\Gato Tic Tac Toe\obj\Debug\linksrc\System.Runtime.Serialization.pdb
 C:\Users\Yeu\Desktop\GUIGato\Gato Tic Tac Toe\obj\Debug\linksrc\System.ServiceModel.Internals.pdb
 C:\Users\Yeu\Desktop\GUIGato\Gato Tic Tac Toe\obj\Debug\linksrc\System.Xml.pdb
+C:\Users\Yeu\Desktop\GUIGato\Gato Tic Tac Toe\bin\Debug\Jurassic.dll
 C:\Users\Yeu\Desktop\GUIGato\Gato Tic Tac Toe\bin\Debug\Gato Tic Tac Toe.dll
 C:\Users\Yeu\Desktop\GUIGato\Gato Tic Tac Toe\obj\Debug\linksrc\Mono.Android.pdb
 C:\Users\Yeu\Desktop\GUIGato\Gato Tic Tac Toe\obj\Debug\linksrc\mscorlib.pdb
