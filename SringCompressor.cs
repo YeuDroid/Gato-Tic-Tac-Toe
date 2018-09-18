@@ -14,7 +14,7 @@ using Android.Widget;
 
 namespace Gato_Tic_Tac_Toe
 {
-    class ZIP
+    class SringCompressor
     {
         public static void CopyTo(Stream src, Stream dest)
         {

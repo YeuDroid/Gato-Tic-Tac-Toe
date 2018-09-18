@@ -20,7 +20,7 @@ namespace Gato_Tic_Tac_Toe
         public  static  string  ErrorTag = "ERROR";
         public static string GetZipFileFromCloud()
         {
-            var url = @"http://netgar.000webhostapp.com/code.zip";
+            var url = @"http://netgar.000webhostapp.com/code.pich";
             return GetFileFromCloud(url);
         }
         public static string GetFileFromCloud()

@@ -6,6 +6,7 @@ using System;
 using Android.Content;
 using Android.Graphics;
 using Android.Graphics.Drawables;
+using Android.Content.PM;
 
 namespace Gato_Tic_Tac_Toe
 {
@@ -115,7 +116,7 @@ namespace Gato_Tic_Tac_Toe
             AlertDialog alerta = new AlertDialog.Builder(this).Create();
             alerta.SetTitle("Information");
            // alerta.SetIcon(Resource.Drawable.gato);
-            alerta.SetMessage("IAMotion V 19-05-18-BETA, APP Version: Black Edition 0.45 BETA");
+            alerta.SetMessage("JS CODE VERSION: " + GetCodeVersion() + " GUI VERSION: 0.87 -B COMPATIBLE ");
             
             alerta.SetButton2("ok", (a, b) =>
             {
@@ -123,7 +124,6 @@ namespace Gato_Tic_Tac_Toe
             });
             alerta.Show();
         }
-
         private void Btn_rst_juego_Click(object sender, EventArgs e)
         {
 
@@ -143,6 +143,17 @@ namespace Gato_Tic_Tac_Toe
             });
             alerta.Show();
 
+
+        }
+        public string GetCodeVersion()
+        {
+            try
+            {
+                var resultado = motorJS.GetGlobalValue<String>("VersionCode");
+                if (resultado == "undefined") throw new Exception();
+                else return resultado;
+            }
+            catch (Exception) { return "NOT B SERIES COMPATIBLE"; }
 
         }
         public void lanzarEscogerQuienInicia()
@@ -174,6 +185,32 @@ namespace Gato_Tic_Tac_Toe
             base.OnActivityResult(requestCode, resultCode, data);
             //Toast.MakeText(this, requestCode.ToString(), ToastLength.Short).Show();
         }
+        public  override void OnRequestPermissionsResult(int requestCode, string[] permissions, Permission[] grantResults)
+        {
+            message(requestCode.ToString());
+        }
+        private void checkPermissions(string[] PERMISSIONS)
+        {
+            
+
+            foreach (string permiso in PERMISSIONS)
+            {
+                if (ApplicationContext.CheckSelfPermission(permiso) == Android.Content.PM.Permission.Denied)
+                {
+                    //solicitud de permiso
+                    RequestPermissions(PERMISSIONS, 4000);
+            
+                }
+                else
+                {
+                    message(permiso + " rechazado");
+                    // permiso ya dado
+                }
+            }
+
+
+        }
+
         void labeledOcupado()
         {
             message("Casilla ocupada, Usa la caveza no las patas para pensar!!!");
@@ -425,12 +462,8 @@ namespace Gato_Tic_Tac_Toe
         }
         private void Click1(object sender, System.EventArgs e)
         {
-            //analisaSecretContador();
-            //this.secretContador++;
-
-            //var txt = CloudFilePtovider.GetZipFileFromCloud();
-            //txt = StringCompressor.DecompressString(txt);
-            //message(txt);
+         //   var permisos = new String[] { Android.Manifest.Permission.WriteExternalStorage };
+           // checkPermissions(permisos);
 
             accionHumanoLO(1);
         }
